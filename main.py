@@ -4,7 +4,8 @@ bot = telebot.TeleBot('1679597751:AAHfoNzsYE4mcZpBqekcjTQP1euKgSGNoks')
 
 @bot.message_handler(content_types=['text'])
 def echo_all(message):
-   bot.send_document(message.chat.id, open('hello.pdf, 'rb'))
+   if message.text == 'Hello':
+       bot.send_document(message.chat.id, open('hello.pdf, 'rb'))
 
 
 bot.polling(True)
