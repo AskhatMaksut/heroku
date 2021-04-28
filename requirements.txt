@@ -1,1 +1,1 @@
-unoconv
+pyTelegramBotAPI==3.7.6
