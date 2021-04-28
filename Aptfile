@@ -1,8 +1,3 @@
-libsm6
-libice6
-libxinerama1
-libdbus-glib-1-2
-libharfbuzz0b
-libharfbuzz-icu0
-libx11-xcb1
-libxcb1
+:repo:deb http://http.us.debian.org/debian stretch main
+
+libreoffice
