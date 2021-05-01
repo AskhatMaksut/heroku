@@ -10,6 +10,7 @@ def echo_all(message):
     with open(r'app\{}'.format(src), 'wb') as new_file:
         new_file.write(downloaded_file)
     subprocess.call('soffice --headless --convert-to pdf:writer_pdf_Export --outdir /app/{}'.format(src),shell=True)
+    src.replace('docx' or 'txt' or 'pdf' or 'doc' or 'rtf','pdf')
     uis_pdf = open('/app/{}'.format(src), 'rb')
     bot.send_document(message.chat.id, uis_pdf)
     uis_pdf.close()
