@@ -10,16 +10,7 @@ def echo_all(message):
     with open(r'app\{}'.format(src), 'wb') as new_file:
         new_file.write(downloaded_file)
     subprocess.call('soffice --headless --convert-to pdf /app/ {}'.format(src))
-    time.sleep(10)
-    if src[-4:] == 'docx':
-        b = src[:-4]
-        src = b + 'pdf'
-    else:
-        b = src[:-3]
-        src = b + 'pdf'
-    uis_pdf = open('/app/{}'.format(src), 'rb')
-    bot.send_document(message.chat.id, uis_pdf)
-    uis_pdf.close()
+   
    
     
 
