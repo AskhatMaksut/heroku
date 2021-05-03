@@ -7,7 +7,7 @@ def echo_all(message):
     file_id_info = bot.get_file(message.document.file_id)
     downloaded_file = bot.download_file(file_id_info.file_path)
     src = file_name
-    with open(r'app\{}'.format(src), 'wb') as new_file:
+    with open(r'\app\{}'.format(src), 'wb') as new_file:
         new_file.write(downloaded_file)
     subprocess.call('soffice --headless --convert-to pdf /app/{}'.format(src))
    
