@@ -9,6 +9,8 @@ def echo_all(message):
     src = file_name
     with open(r'\app\{}'.format(src), 'wb') as new_file:
         new_file.write(downloaded_file)
+        print('Successfly created new file')
+    time.sleep(10)
     subprocess.call('soffice --headless --convert-to pdf {}'.format(src))
    
    
