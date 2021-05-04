@@ -21,6 +21,12 @@ def echo_all(message):
     uis_pdf = open('/app/{}'.format(src), 'rb')
     bot.send_document(message.chat.id, uis_pdf)
     uis_pdf.close()
+    time.sleep(10)
+    path = os.path.join(os.path.abspath(os.path.dirname(__file__)), str(src))
+    os.remove(path)
+    src = file_name
+    path = os.path.join(os.path.abspath(os.path.dirname(__file__)), str(src))
+    os.remove(path)
    
    
     
