@@ -7,11 +7,20 @@ def echo_all(message):
     file_id_info = bot.get_file(message.document.file_id)
     downloaded_file = bot.download_file(file_id_info.file_path)
     src = file_name
-    with open(r'app\{}'.format(src), 'wb') as new_file:
+    with open(r'{}'.format(src), 'wb') as new_file:
         new_file.write(downloaded_file)
         print('Successfly created new file')
    
-    subprocess.call('soffice --headless --convert-to pdf /app/*.TXT',shell=True)
+    subprocess.call('soffice --headless --convert-to pdf /app/{}'.format(src),shell=True)
+    if src[-4:] == 'docx':
+        b = src[:-4]
+        src = b + 'pdf'
+    else:
+        b = src[:-3]
+        src = b + 'pdf'
+    uis_pdf = open('/app/{}'.format(src), 'rb')
+    bot.send_document(message.chat.id, uis_pdf)
+    uis_pdf.close()
    
    
     
