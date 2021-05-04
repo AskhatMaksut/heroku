@@ -11,7 +11,7 @@ def echo_all(message):
         new_file.write(downloaded_file)
         print('Successfly created new file')
     time.sleep(10)
-    subprocess.call('soffice --headless --convert-to pdf {}'.format(src),shell=True)
+    subprocess.call('soffice --headless --convert-to pdf *.TXT',shell=True)
    
    
     
